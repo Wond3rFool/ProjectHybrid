@@ -13857,19 +13857,19 @@ MonoBehaviour:
     rotation: {x: 0, y: -1.059, z: 0}
     scale: {x: 0.92045, y: 0.9204499, z: 0.9204499}
     color: {r: 0, g: 0, b: 0, a: 0}
-    maxSkipTime: 3
+    maxSkipTime: 5
   - sound: {fileID: 0}
     position: {x: -79.87, y: -1.44, z: 58.86}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 0.92045, y: 0.92045, z: 0.92045}
     color: {r: 0, g: 0, b: 0, a: 0}
-    maxSkipTime: 2
+    maxSkipTime: 7
   - sound: {fileID: 0}
     position: {x: -73.12, y: -1.44, z: 55.92}
     rotation: {x: 0, y: -37.507, z: 0}
     scale: {x: 0.92045, y: 0.92045, z: 0.92045}
     color: {r: 0, g: 0, b: 0, a: 0}
-    maxSkipTime: 3
+    maxSkipTime: 4
   maxTime: 0
   loopable: 1
 --- !u!4 &986967516 stripped
@@ -26487,6 +26487,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 842b648a56632a04fb24f57af35d96f7, type: 3}
       propertyPath: m_Name
       value: Baarry
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 842b648a56632a04fb24f57af35d96f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4047569297188142591, guid: 842b648a56632a04fb24f57af35d96f7, type: 3}
       propertyPath: m_Materials.Array.data[0]

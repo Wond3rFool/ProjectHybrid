@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class IsVisible : MonoBehaviour
@@ -75,10 +76,33 @@ public class IsVisible : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).GetComponent<Renderer>() != null)
-            {
-                rends.Add(transform.GetChild(i).GetComponent<Renderer>());
-            }
+            RecursiveChildRendering(transform, i);
+        }
+    }
+
+    private void RecursiveChildRendering(Transform _transform, int _i)
+    {
+        if (_transform.GetChild(_i).GetComponent<Renderer>() != null)
+        {
+            rends.Add(_transform.GetChild(_i).GetComponent<Renderer>());
+        }
+
+        for (int i = 0; i < _transform.GetChild(_i).childCount; i++)
+        {
+            RecursiveChildRendering(_transform.GetChild(_i), i);
+        }
+    }
+
+    private void RecursiveChildDisabling(Transform _transform, int _i)
+    {
+        if (_transform.GetChild(_i).GetComponent<Renderer>() != null)
+        {
+            _transform.GetChild(_i).GetComponent<Renderer>().renderingLayerMask = 0;
+        }
+
+        for (int i = 0; i < _transform.GetChild(_i).childCount; i++)
+        {
+            RecursiveChildDisabling(_transform.GetChild(_i), i);
         }
     }
 
@@ -93,17 +117,14 @@ public class IsVisible : MonoBehaviour
             activePremesh.AddComponent<Replacable>();
             activePremesh.GetComponent<Replacable>().refItem = this;
 
-            if (activePremesh.GetComponent<MeshRenderer>() != null)
+            if (activePremesh.GetComponent<Renderer>() != null)
             {
-                activePremesh.GetComponent<MeshRenderer>().renderingLayerMask = 0;
+                activePremesh.GetComponent<Renderer>().renderingLayerMask = 0;
             }
 
             for (int i = 0; i < transform.childCount; i++)
             {
-                if (activePremesh.transform.GetChild(i).GetComponent<MeshRenderer>() != null)
-                {
-                    activePremesh.transform.GetChild(i).GetComponent<MeshRenderer>().renderingLayerMask = 0;
-                }
+                RecursiveChildDisabling(activePremesh.transform, i);
             }
 
             activePremesh.transform.eulerAngles = changeableValues[currentState].rotation;
