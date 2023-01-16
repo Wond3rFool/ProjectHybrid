@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 842b648a56632a04fb24f57af35d96f7
+guid: 0c6a49af17d81a447adad81cffcc1fee
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -5784005261616917065
-    second: Armature.001|Armature.001Action.001
+      74: 6605718146475901733
+    second: Armature.001|Armature.001Action.002
+  - first:
+      74: -3921073216884974100
+    second: Armature.001|Twitchy Twitchy
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,8 +39,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.001|Armature.001Action.001
-      takeName: Armature.001|Armature.001Action.001
+      name: Armature.001|Armature.001Action.002
+      takeName: Armature.001|Armature.001Action.002
       internalID: 0
       firstFrame: 0
       lastFrame: 249
@@ -48,7 +51,36 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature.001|Twitchy Twitchy
+      takeName: Armature.001|Twitchy Twitchy
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 249
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
