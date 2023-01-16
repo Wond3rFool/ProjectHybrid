@@ -17,14 +17,18 @@ namespace Bhaptics.SDK2
     public class BhapticsEvent
     {
         
+        public const string UPDV1 = "updv1";
+        
+        public const string WEELONE = "weelone";
+        
         public const string BACKCRAWL = "backcrawl";
+        
+        public const string HYBRID = "hybrid";
         
         public const string MAXVIBRATE = "maxvibrate";
         
         public const string FORCRAWL = "forcrawl";
         
-        public const string UPDV1 = "updv1";
-        
-        public const string HYBRID = "hybrid";
+        public const string FLOOR_RUMBLE = "floor_rumble";
     }
 }
