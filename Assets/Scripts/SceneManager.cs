@@ -11,20 +11,23 @@ public class SceneManager : MonoBehaviour
     public GameObject lamp2;
     public AudioSource aSource;
     public AudioSource bSource;
+    public HapticEvents hapticEvents;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
-            aSource.Play();
+            //hapticEvents.RoomFalling();
+            hapticEvents.Invoke("RoomFalling",5f);
+            //aSource.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) 
         {
             lamp1.SetActive(true);
             lamp2.SetActive(true);  
-            bSource.Play();
+            //bSource.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3)) 
