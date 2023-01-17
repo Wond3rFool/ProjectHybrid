@@ -28,7 +28,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
-            hapticEvents.Invoke("WeelEvent", 8f);
+            //hapticEvents.Invoke("WeelEvent", 8f);
             aSource.PlayOneShot(adu[12]);
             robotArm.GetComponent<Animator>().Play("Armature_002_ArmDetract");
             tv.GetComponent<VideoPlayer>().Prepare();
