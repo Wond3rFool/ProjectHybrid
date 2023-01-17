@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class SceneManager : MonoBehaviour
 {
     public GameObject weelChair;
+    public GameObject tv;
+
     public GameObject fallingFloor;
     public GameObject visibleFloor;
+
     public GameObject lamp1;
     public GameObject lamp2;
+
+    public GameObject robotArm;
+
     public AudioSource aSource;
     public AudioSource bSource;
+
     public HapticEvents hapticEvents;
     // Update is called once per frame
     void Update()
@@ -18,37 +26,37 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
-            //hapticEvents.RoomFalling();
-            hapticEvents.Invoke("RoomFalling",5f);
-            //aSource.Play();
+            robotArm.GetComponent<Animator>().Play("Armature_002_ArmDetract");
+            tv.GetComponent<VideoPlayer>().Prepare();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) 
         {
             lamp1.SetActive(true);
-            lamp2.SetActive(true);  
-            //bSource.Play();
+            lamp2.SetActive(true);
+            tv.GetComponent<VideoPlayer>().Play();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3)) 
         {
+            robotArm.GetComponent<Animator>().Play("Armature_002|ArmLower");
             //Robot arm down thing
             //Play ear sound
         }
         if (Input.GetKeyDown(KeyCode.Alpha4)) 
         {
-            //Robot arm to chest thing
+            robotArm.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure");
             //play haptic vest.
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            //Robot arm to arm
+            robotArm.GetComponent<Animator>().Play("Armature_002|Temperature Measure");
             //we stab the person in the chair
             //robot arm moves up and disappears again.
         }
         if (Input.GetKeyDown(KeyCode.Alpha6)) 
         {
-            //play voice initiate 
+            //play voice initiate
         }
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
@@ -68,11 +76,11 @@ public class SceneManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            //Robot arm returns. watch He has A gun!!. on no wait it's a knife.
+            robotArm.GetComponent<Animator>().Play("Armature_002|ArmLower");
         }
         if (Input.GetKeyDown(KeyCode.W)) 
         {
-            //if player looks at the knife start cutting.
+            robotArm.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -83,6 +91,7 @@ public class SceneManager : MonoBehaviour
         {
             //initiate phase 3
             visibleFloor.SetActive(false);
+            hapticEvents.Invoke("RoomFalling", 1f);
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);
         }
 
