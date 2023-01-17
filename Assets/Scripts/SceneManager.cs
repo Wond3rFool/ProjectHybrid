@@ -26,6 +26,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
+            hapticEvents.Invoke("WeelEvent", 8f);
             robotArm.GetComponent<Animator>().Play("Armature_002_ArmDetract");
             tv.GetComponent<VideoPlayer>().Prepare();
         }
@@ -46,7 +47,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4)) 
         {
             robotArm.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure");
-            //play haptic vest.
+            hapticEvents.Invoke("HeartScan", 2f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
