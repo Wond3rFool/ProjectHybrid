@@ -115,7 +115,7 @@ public class SceneManager : MonoBehaviour
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             robotArmAudio.PlayOneShot(adu[9]);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
             robotArmAudio.PlayOneShot(adu[6]);
@@ -124,25 +124,25 @@ public class SceneManager : MonoBehaviour
             //play haptic vest again
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0)) 
+        if (Input.GetKeyDown(KeyCode.Q)) 
         {
             //play weird voice and afterwards
             //initiate phase 2 or seperate that to something else.
             bSource.PlayOneShot(adu[3]);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             knife.SetActive(true);
             robotArmAudio.PlayOneShot(adu[9]);
         }
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
             robotArmAudio.PlayOneShot(adu[6]);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             hand.SetActive(true);
             mesh2.SetActive(false);
@@ -151,7 +151,7 @@ public class SceneManager : MonoBehaviour
             //play animation for weird player arms
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) 
+        if (Input.GetKeyDown(KeyCode.T)) 
         {
             //initiate phase 3
             bSource.PlayOneShot(adu[4]);
