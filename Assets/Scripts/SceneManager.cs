@@ -87,8 +87,8 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
-            animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
-            robotArmAudio.PlayOneShot(adu[6]);
+            animationParent.GetComponent<Animator>().Play("Armature_002|BloodTest");
+            robotArmAudio.PlayOneShot(adu[10]);
             mesh1.SetActive(false);
             mesh2.SetActive(true);
         }
@@ -101,9 +101,13 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             //let gas flow up if we're going to use it
+            animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
+            robotArmAudio.PlayOneShot(adu[9]);
         }
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
+            animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
+            robotArmAudio.PlayOneShot(adu[6]);
             //Play the insect thing
             //play haptic vest again
         }
