@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 581e44df1d6964346b0b331c7ac6ea63
+guid: 48faa1d6827361e4081450ad6badd693
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -5220820034783971569
-    second: Armature.003|Armature.003Action.004
-  - first:
       74: 2223154294555054685
     second: Armature.003|Armature.003Action.005
+  - first:
+      74: 2992299159650908962
+    second: Armature.003|CentipedeWalk
   - first:
       74: -269582940805421893
     second: Armature.003|Empty.001Action.002
@@ -57,8 +57,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.003|Armature.003Action.004
-      takeName: Armature.003|Armature.003Action.004
+      name: Armature.003|Armature.003Action.005
+      takeName: Armature.003|Armature.003Action.005
       internalID: 0
       firstFrame: 0
       lastFrame: 23
@@ -86,8 +86,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.003|Armature.003Action.005
-      takeName: Armature.003|Armature.003Action.005
+      name: Armature.003|CentipedeWalk
+      takeName: Armature.003|CentipedeWalk
       internalID: 0
       firstFrame: 0
       lastFrame: 23
@@ -146,7 +146,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.05
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -199,7 +199,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0005
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
