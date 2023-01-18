@@ -11,8 +11,7 @@ public class SceneManager : MonoBehaviour
     public GameObject fallingFloor;
     public GameObject visibleFloor;
 
-    public GameObject lamp1;
-    public GameObject lamp2;
+    public GameObject lamp;
 
     public GameObject robotArm;
 
@@ -31,48 +30,55 @@ public class SceneManager : MonoBehaviour
             //hapticEvents.Invoke("WeelEvent", 8f);
             aSource.PlayOneShot(adu[12]);
             robotArm.GetComponent<Animator>().Play("Armature_002_ArmDetract");
-            tv.GetComponent<VideoPlayer>().Prepare();
+            tv.GetComponentInChildren<VideoPlayer>().Prepare();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) 
         {
-            lamp1.SetActive(true);
-            lamp2.SetActive(true);
-            tv.GetComponent<VideoPlayer>().Play();
+            lamp.SetActive(true);
+            tv.GetComponent<Animator>().Play("Drop down");
+            tv.GetComponentInChildren<VideoPlayer>().Play();
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3)) 
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            tv.GetComponent<Animator>().Play("Pop Up");
+            aSource.PlayOneShot(adu[1]);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) 
         {
             robotArm.GetComponent<Animator>().Play("Armature_002|ArmLower");
             //Robot arm down thing
             //Play ear sound
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4)) 
+        if (Input.GetKeyDown(KeyCode.Alpha5)) 
         {
             robotArm.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure");
             hapticEvents.Invoke("HeartScan", 2f);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+        if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             robotArm.GetComponent<Animator>().Play("Armature_002|Temperature Measure");
             //we stab the person in the chair
             //robot arm moves up and disappears again.
         }
-        if (Input.GetKeyDown(KeyCode.Alpha6)) 
+        if (Input.GetKeyDown(KeyCode.Alpha7)) 
         {
-            //play voice initiate
+            aSource.PlayOneShot(adu[2]);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+        if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             //let gas flow up if we're going to use it
         }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+        if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             //Play the insect thing
             //play haptic vest again
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha9)) 
+        if (Input.GetKeyDown(KeyCode.Alpha0)) 
         {
             //play weird voice and afterwards
             //initiate phase 2 or seperate that to something else.

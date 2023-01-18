@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 9fecfd6f86d53494b810e11de471d445
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -5126747061785678383
+    second: Armature.002|Arm Cutoff.001Action
+  - first:
+      74: -8968808335200005785
+    second: Armature.002|Arm Cutting
+  - first:
+      74: 5869063824217979705
+    second: Armature.002|Arm_Cutoff
+  - first:
+      74: 4653724227512701971
+    second: Armature.002|Armature.002
+  - first:
+      74: 4028146881832135640
+    second: Armature.002|Armature.002Action.001
+  - first:
+      74: -6186766314473033455
+    second: Armature.002|ArmLower
+  - first:
+      74: -1095353105114177914
+    second: Armature.002|BloodTest
+  - first:
+      74: -3242794418121422140
+    second: Armature.002|Body_Being_Cut
+  - first:
+      74: 2140316652893241733
+    second: Armature.002|Empty.001Action.002
+  - first:
+      74: -8630783244028722095
+    second: Armature.002|Hand_Fall
+  - first:
+      74: 6355885485603461576
+    second: Armature.002|Heartbeat_Measure
+  - first:
+      74: 8043372887538500394
+    second: Armature.002|rp_manuel_animated_001_dancing_eye_end_l|Take 001|BaseLayer
+  - first:
+      74: 8801698698936310359
+    second: Armature.002|rp_manuel_animated_001_dancing_eye_end_r|Take 001|BaseLayer
+  - first:
+      74: -6425897289216064873
+    second: Armature.002|rp_manuel_animated_001_dancing_eyelid_end_l|Take 001|BaseLayer
+  - first:
+      74: 7853861468840815825
+    second: Armature.002|rp_manuel_animated_001_dancing_eyelid_end_r|Take 001|BaseLayer
+  - first:
+      74: 4291950215092778700
+    second: Armature.002|rp_manuel_animated_001_dancing_foot_end_l|Take 001|BaseLayer
+  - first:
+      74: 6692980774234164908
+    second: Armature.002|rp_manuel_animated_001_dancing_foot_end_r|Take 001|BaseLayer
+  - first:
+      74: 1439127018663325053
+    second: Armature.002|rp_manuel_animated_001_dancing_head_end|Take 001|BaseLayer
+  - first:
+      74: 4334812710433643569
+    second: Armature.002|rp_manuel_animated_001_dancing_index_end_l|Take 001|BaseLayer
+  - first:
+      74: 3711988065321415009
+    second: Armature.002|rp_manuel_animated_001_dancing_index_end_r|Take 001|BaseLayer
+  - first:
+      74: -7171578529603332416
+    second: Armature.002|rp_manuel_animated_001_dancing_jaw_end|Take 001|BaseLayer
+  - first:
+      74: -1426967530102664065
+    second: Armature.002|rp_manuel_animated_001_dancing_middle_end_l|Take 001|BaseLayer
+  - first:
+      74: 3532865836025539555
+    second: Armature.002|rp_manuel_animated_001_dancing_middle_end_r|Take 001|BaseLayer
+  - first:
+      74: -4309092316187748471
+    second: Armature.002|rp_manuel_animated_001_dancing_pinky_end_l|Take 001|BaseLayer
+  - first:
+      74: -4137292620800489546
+    second: Armature.002|rp_manuel_animated_001_dancing_pinky_end_r|Take 001|BaseLayer
+  - first:
+      74: -5028148410043270821
+    second: Armature.002|rp_manuel_animated_001_dancing_ring_end_l|Take 001|BaseLayer
+  - first:
+      74: -6237163454390226001
+    second: Armature.002|rp_manuel_animated_001_dancing_ring_end_r|Take 001|BaseLayer
+  - first:
+      74: 4889862831821359295
+    second: Armature.002|rp_manuel_animated_001_dancing_root|Take 001|BaseLayer
+  - first:
+      74: -762691972342124355
+    second: Armature.002|rp_manuel_animated_001_dancing_thumb_end_l|Take 001|BaseLayer
+  - first:
+      74: 3336964184943227193
+    second: Armature.002|rp_manuel_animated_001_dancing_thumb_end_r|Take 001|BaseLayer
+  - first:
+      74: 7220375427632101040
+    second: Armature.002|SpotAction
+  - first:
+      74: 3374075429486031523
+    second: Armature.002|Temperature Measure
+  - first:
+      74: 1560498947321209545
+    second: Body_Sliced|Arm Cutoff.001Action
+  - first:
+      74: 1644013057129027498
+    second: Body_Sliced|Armature.002Action.001
+  - first:
+      74: 5720086881109432777
+    second: Body_Sliced|Body_Being_Cut
+  - first:
+      74: 321008040473276221
+    second: Body_Sliced|Empty.001Action.002
+  - first:
+      74: 4854973582144096461
+    second: Body_Sliced|Hand_Fall
+  - first:
+      74: -6095705440123864635
+    second: Body_Sliced|rp_manuel_animated_001_dancing_eye_end_l|Take 001|BaseLayer
+  - first:
+      74: 7623534656464371863
+    second: Body_Sliced|rp_manuel_animated_001_dancing_eye_end_r|Take 001|BaseLayer
+  - first:
+      74: -6096588547925861224
+    second: Body_Sliced|rp_manuel_animated_001_dancing_eyelid_end_l|Take 001|BaseLayer
+  - first:
+      74: -8660705039375790027
+    second: Body_Sliced|rp_manuel_animated_001_dancing_eyelid_end_r|Take 001|BaseLayer
+  - first:
+      74: -1091359225777358260
+    second: Body_Sliced|rp_manuel_animated_001_dancing_foot_end_l|Take 001|BaseLayer
+  - first:
+      74: -2551191749218634030
+    second: Body_Sliced|rp_manuel_animated_001_dancing_foot_end_r|Take 001|BaseLayer
+  - first:
+      74: 2152628069589098154
+    second: Body_Sliced|rp_manuel_animated_001_dancing_head_end|Take 001|BaseLayer
+  - first:
+      74: 2709960663831228720
+    second: Body_Sliced|rp_manuel_animated_001_dancing_index_end_l|Take 001|BaseLayer
+  - first:
+      74: 7705147649332995416
+    second: Body_Sliced|rp_manuel_animated_001_dancing_index_end_r|Take 001|BaseLayer
+  - first:
+      74: 5537392901012632969
+    second: Body_Sliced|rp_manuel_animated_001_dancing_jaw_end|Take 001|BaseLayer
+  - first:
+      74: -6846951521849098081
+    second: Body_Sliced|rp_manuel_animated_001_dancing_middle_end_l|Take 001|BaseLayer
+  - first:
+      74: -6732774081811013159
+    second: Body_Sliced|rp_manuel_animated_001_dancing_middle_end_r|Take 001|BaseLayer
+  - first:
+      74: 2535219961029131138
+    second: Body_Sliced|rp_manuel_animated_001_dancing_pinky_end_l|Take 001|BaseLayer
+  - first:
+      74: 3601602507347962716
+    second: Body_Sliced|rp_manuel_animated_001_dancing_pinky_end_r|Take 001|BaseLayer
+  - first:
+      74: -9006596528745621721
+    second: Body_Sliced|rp_manuel_animated_001_dancing_ring_end_l|Take 001|BaseLayer
+  - first:
+      74: 8518527308519370978
+    second: Body_Sliced|rp_manuel_animated_001_dancing_ring_end_r|Take 001|BaseLayer
+  - first:
+      74: -4379080640400179222
+    second: Body_Sliced|rp_manuel_animated_001_dancing_root|Take 001|BaseLayer
+  - first:
+      74: -4361089576298801917
+    second: Body_Sliced|rp_manuel_animated_001_dancing_thumb_end_l|Take 001|BaseLayer
+  - first:
+      74: -3266171285854918174
+    second: Body_Sliced|rp_manuel_animated_001_dancing_thumb_end_r|Take 001|BaseLayer
+  - first:
+      74: -1614704703451318722
+    second: Body_Sliced|SpotAction
+  - first:
+      74: -5792237115567092341
+    second: Hnad|Arm Cutoff.001Action
+  - first:
+      74: 5092585074492400236
+    second: Hnad|Armature.002Action.001
+  - first:
+      74: 3454924669536994636
+    second: Hnad|Body_Being_Cut
+  - first:
+      74: 5767348740705176624
+    second: Hnad|Empty.001Action.002
+  - first:
+      74: -4977616322667841429
+    second: Hnad|Hand_Fall
+  - first:
+      74: 6490033452968137156
+    second: Hnad|rp_manuel_animated_001_dancing_eye_end_l|Take 001|BaseLayer
+  - first:
+      74: -2290437015935686108
+    second: Hnad|rp_manuel_animated_001_dancing_eye_end_r|Take 001|BaseLayer
+  - first:
+      74: 8112181915746650267
+    second: Hnad|rp_manuel_animated_001_dancing_eyelid_end_l|Take 001|BaseLayer
+  - first:
+      74: -2103192328530277319
+    second: Hnad|rp_manuel_animated_001_dancing_eyelid_end_r|Take 001|BaseLayer
+  - first:
+      74: 5864190490631769403
+    second: Hnad|rp_manuel_animated_001_dancing_foot_end_l|Take 001|BaseLayer
+  - first:
+      74: -8563662460865050903
+    second: Hnad|rp_manuel_animated_001_dancing_foot_end_r|Take 001|BaseLayer
+  - first:
+      74: 785537175685030513
+    second: Hnad|rp_manuel_animated_001_dancing_head_end|Take 001|BaseLayer
+  - first:
+      74: 7708430142122815975
+    second: Hnad|rp_manuel_animated_001_dancing_index_end_l|Take 001|BaseLayer
+  - first:
+      74: -2578763979044980856
+    second: Hnad|rp_manuel_animated_001_dancing_index_end_r|Take 001|BaseLayer
+  - first:
+      74: 9168336655830164568
+    second: Hnad|rp_manuel_animated_001_dancing_jaw_end|Take 001|BaseLayer
+  - first:
+      74: -3801706973663474575
+    second: Hnad|rp_manuel_animated_001_dancing_middle_end_l|Take 001|BaseLayer
+  - first:
+      74: -6823555310106310517
+    second: Hnad|rp_manuel_animated_001_dancing_middle_end_r|Take 001|BaseLayer
+  - first:
+      74: 1698712304574474581
+    second: Hnad|rp_manuel_animated_001_dancing_pinky_end_l|Take 001|BaseLayer
+  - first:
+      74: 2775107680601602982
+    second: Hnad|rp_manuel_animated_001_dancing_pinky_end_r|Take 001|BaseLayer
+  - first:
+      74: 982622562540539157
+    second: Hnad|rp_manuel_animated_001_dancing_ring_end_l|Take 001|BaseLayer
+  - first:
+      74: -4310319990803968719
+    second: Hnad|rp_manuel_animated_001_dancing_ring_end_r|Take 001|BaseLayer
+  - first:
+      74: -8537144958937277974
+    second: Hnad|rp_manuel_animated_001_dancing_root|Take 001|BaseLayer
+  - first:
+      74: -903780414187749793
+    second: Hnad|rp_manuel_animated_001_dancing_thumb_end_l|Take 001|BaseLayer
+  - first:
+      74: 1361419887584249895
+    second: Hnad|rp_manuel_animated_001_dancing_thumb_end_r|Take 001|BaseLayer
+  - first:
+      74: 859736278994001854
+    second: Hnad|SpotAction
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
