@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
 
     public GameObject fallingFloor;
     public GameObject visibleFloor;
+    public GameObject eyeBall;
 
     public GameObject lamp;
 
@@ -254,6 +255,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U)) 
         {
             flickerLights = true; 
+            eyeBall.SetActive(true);
             // Flashing room
         }
 
