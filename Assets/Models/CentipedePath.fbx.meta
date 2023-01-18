@@ -9,7 +9,22 @@ ModelImporter:
   - first:
       74: 2317722312292120241
     second: CentipedeBody|Empty.001Action.002
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QS1167-W01-body.001
+    second: {fileID: 2100000, guid: e6ae8097abad9474fbd203111a3e7099, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ashi.001
+    second: {fileID: 2100000, guid: 28bd5c0fb24287247b5272c0405addd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tail.001
+    second: {fileID: 2100000, guid: 9acce1d99d7ee11478cdafa301e3086e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -94,7 +109,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.02
+    globalScale: 2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
