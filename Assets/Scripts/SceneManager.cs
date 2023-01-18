@@ -33,6 +33,9 @@ public class SceneManager : MonoBehaviour
 
     public HapticEvents hapticEvents;
 
+    bool isCutting = false;
+    float timer = 3.91f;
+
     private void Start()
     {
         knife.SetActive(false);
@@ -41,6 +44,15 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isCutting)
+        {
+            timer--;
+            if (timer < 0) 
+            {
+                mesh1.SetActive(false);
+                mesh2.SetActive(true);
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
@@ -89,8 +101,7 @@ public class SceneManager : MonoBehaviour
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|BloodTest");
             robotArmAudio.PlayOneShot(adu[10]);
-            mesh1.SetActive(false);
-            mesh2.SetActive(true);
+
         }
         if (Input.GetKeyDown(KeyCode.Alpha8)) 
         {
@@ -108,6 +119,7 @@ public class SceneManager : MonoBehaviour
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
             robotArmAudio.PlayOneShot(adu[6]);
+            isCutting = true;
             //Play the insect thing
             //play haptic vest again
         }
