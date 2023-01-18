@@ -161,5 +161,11 @@ public class SceneManager : MonoBehaviour
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);
         }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            lamp.SetActive(true);
+            lampAudio.Play();
+        }
+
     }
 }
