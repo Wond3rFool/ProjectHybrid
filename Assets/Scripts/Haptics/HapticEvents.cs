@@ -15,7 +15,7 @@ public class HapticEvents : MonoBehaviour
         Bhaptics.SDK2.BhapticsLibrary.Play("floor_rumble");
     }
 
-public void HeartScan()
+    public void HeartScan()
     {
         Bhaptics.SDK2.BhapticsLibrary.Play("heartscan");
     }

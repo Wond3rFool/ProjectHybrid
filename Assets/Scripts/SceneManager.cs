@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.VFX;
+using UnityEditor.Rendering;
 
 public class SceneManager : MonoBehaviour
 {
@@ -14,12 +15,20 @@ public class SceneManager : MonoBehaviour
 
     public GameObject lamp;
 
+    public Light alarmLamp1;
+    public Light alarmLamp2;
+    public Light alarmLamp3;
+    public Light alarmLamp4;
+    public Light alarmLamp5;
+    public Light alarmLamp6;
+
     public GameObject mesh1;
     public GameObject mesh2;
     public GameObject mesh3;
     public GameObject hand;
 
     public GameObject vfxGas;
+    public GameObject centipede;
 
     public GameObject animationParent;
     public GameObject robotArm;
@@ -40,17 +49,28 @@ public class SceneManager : MonoBehaviour
     bool videoDone = false;
     bool armIsUp = false;
     bool armIsUp2 = false;
+    bool flickerLights = false;
 
     float timer = 3.91f;
     float tvTimer = 4f;
     float tvTimer2 = 2f;
     float tvTimer3 = 2f;
     float vfxTimer = 3f;
+    float flickerlightsTime = 7.25f;
+
+
+
+    float minTime = 0.75f;
+    float maxTime = 0.75f;
+    float timerLamps;
+    
 
     private void Start()
     {
         knife.SetActive(false);
         robotArm.SetActive(false);
+        centipede.SetActive(false);
+        timerLamps = Random.Range(minTime, maxTime);
     }
     // Update is called once per frame
     void Update()
@@ -108,6 +128,17 @@ public class SceneManager : MonoBehaviour
                 tvTimer3 = 2f;
             }
         }
+        if (flickerLights)
+        {
+            LightsFlickering();
+            flickerlightsTime -= Time.deltaTime;
+            if (flickerlightsTime <= 0) 
+            {
+                flickerLights = false;
+                flickerlightsTime = 7.25f;
+            }
+        }
+
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
@@ -170,39 +201,49 @@ public class SceneManager : MonoBehaviour
             vfxGas.GetComponent<VisualEffect>().Play();
             gasIsGassing = true;
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            centipede.SetActive(true);
+            centipede.GetComponent<Animator>().Play("CentipedeMove");
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            centipede.GetComponent<Animator>().Play("CentipedeBody_CentipedeBodyCrawl");
+            //play haptics bodycrawl.
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.W))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             robotArmAudio.PlayOneShot(adu[9]);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
             robotArmAudio.PlayOneShot(adu[6]);
             isCutting = true;
-            //Play the insect thing
-            //play haptic vest again
         }
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.R)) 
         {
-            //play weird voice and afterwards
-            //initiate phase 2 or seperate that to something else.
             animationParent.GetComponent<Animator>().Play("Armature_002_ArmRise");
             robotArmAudio.PlayOneShot(adu[9]);
             armIsUp2 = true;
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
+            bSource.PlayOneShot(adu[4]);
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             knife.SetActive(true);
             robotArmAudio.PlayOneShot(adu[9]);
         }
-        if (Input.GetKeyDown(KeyCode.R)) 
+        if (Input.GetKeyDown(KeyCode.T)) 
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm_Cutoff");
             robotArmAudio.PlayOneShot(adu[6]);
         }
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             hand.SetActive(true);
             mesh2.SetActive(false);
@@ -210,19 +251,46 @@ public class SceneManager : MonoBehaviour
             animationParent.GetComponent<Animator>().Play("Hnad|Hand_Fall");
             //play animation for weird player arms
         }
-        if (Input.GetKeyDown(KeyCode.Y)) 
+        if (Input.GetKeyDown(KeyCode.U)) 
         {
-            //initiate phase 3
-            bSource.PlayOneShot(adu[4]);
+            flickerLights = true; 
+            // Flashing room
+        }
+
+        if (Input.GetKeyDown(KeyCode.I)) 
+        {
             visibleFloor.SetActive(false);
             hapticEvents.Invoke("RoomFalling", 1f);
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            bSource.PlayOneShot(adu[11]);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.Z))
         {
             lamp.SetActive(true);
             lampAudio.Play();
         }
 
+    }
+    void LightsFlickering()
+    {
+        if (timerLamps > 0)
+            timerLamps -= Time.deltaTime;
+
+        if (timerLamps <= 0)
+        {
+            alarmLamp1.enabled = !alarmLamp1.enabled;
+            alarmLamp2.enabled = !alarmLamp2.enabled;
+            alarmLamp3.enabled = !alarmLamp3.enabled;
+            alarmLamp4.enabled = !alarmLamp4.enabled;
+            alarmLamp5.enabled = !alarmLamp5.enabled;
+            alarmLamp6.enabled = !alarmLamp6.enabled;
+            timerLamps = Random.Range(minTime, maxTime);
+        }
     }
 }
