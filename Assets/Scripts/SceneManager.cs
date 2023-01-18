@@ -89,6 +89,8 @@ public class SceneManager : MonoBehaviour
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
             robotArmAudio.PlayOneShot(adu[6]);
+            mesh1.SetActive(false);
+            mesh2.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Alpha8)) 
         {
@@ -116,6 +118,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
+            knife.SetActive(true);
             robotArmAudio.PlayOneShot(adu[9]);
         }
         if (Input.GetKeyDown(KeyCode.W)) 
@@ -125,12 +128,17 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
+            hand.SetActive(true);
+            mesh2.SetActive(false);
+            mesh3.SetActive(true);
+            animationParent.GetComponent<Animator>().Play("Hnad|Hand_Fall");
             //play animation for weird player arms
         }
 
         if (Input.GetKeyDown(KeyCode.R)) 
         {
             //initiate phase 3
+            bSource.PlayOneShot(adu[4]);
             visibleFloor.SetActive(false);
             hapticEvents.Invoke("RoomFalling", 1f);
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);
