@@ -37,7 +37,14 @@ public class SceneManager : MonoBehaviour
 
     bool isCutting = false;
     bool gasIsGassing = false;
+    bool videoDone = false;
+    bool armIsUp = false;
+    bool armIsUp2 = false;
+
     float timer = 3.91f;
+    float tvTimer = 4f;
+    float tvTimer2 = 2f;
+    float tvTimer3 = 2f;
     float vfxTimer = 3f;
 
     private void Start()
@@ -50,23 +57,58 @@ public class SceneManager : MonoBehaviour
     {
         if (isCutting)
         {
-            timer--;
+            timer -= Time.deltaTime;
             if (timer < 0) 
             {
                 mesh1.SetActive(false);
                 mesh2.SetActive(true);
                 isCutting = false;
+                timer = 3.91f;
             }
         }
         if (gasIsGassing) 
         {
-            vfxTimer--;
+            vfxTimer -= Time.deltaTime;
             if (vfxTimer < 0) 
             {
                 vfxGas.GetComponent<VisualEffect>().Stop();
+                gasIsGassing = false;
+                vfxTimer = 3f;
             }
         
         }
+        if (videoDone)
+        {
+            tvTimer -= Time.deltaTime;
+            if (tvTimer < 0)
+            {
+                bSource.PlayOneShot(adu[1]);
+                videoDone = false;
+                tvTimer = 4f;
+            }
+        }
+        if (armIsUp) 
+        {
+            tvTimer2 -= Time.deltaTime;
+            if (tvTimer2 < 0) 
+            {
+                bSource.PlayOneShot(adu[2]);
+                armIsUp = false;
+                tvTimer2 = 2f;
+            }
+        
+        }
+        if (armIsUp2) 
+        {
+            tvTimer3 -= Time.deltaTime;
+            if (tvTimer3 < 0) 
+            {
+                bSource.PlayOneShot(adu[3]);
+                armIsUp2 = false;
+                tvTimer3 = 2f;
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
@@ -87,14 +129,12 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             tv.GetComponent<Animator>().Play("Pop Up");
-            bSource.PlayOneShot(adu[1]);
+            videoDone = true;
         }
-
 
         if (Input.GetKeyDown(KeyCode.Alpha4)) 
         {
             robotArm.SetActive(true);
-            robotArm.transform.position = new Vector3(robotArm.transform.position.x - 10f, robotArm.transform.position.y, robotArm.transform.position.z);
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             robotArmAudio.PlayOneShot(adu[9]);
             //Robot arm down thing
@@ -107,7 +147,7 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            animationParent.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure");
+            animationParent.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure V2");
             robotArmAudio.PlayOneShot(adu[8]);
             hapticEvents.Invoke("HeartScan", 2f);
             //we stab the person in the chair
@@ -123,7 +163,7 @@ public class SceneManager : MonoBehaviour
         {
             animationParent.GetComponent<Animator>().Play("Armature_002_ArmRise");
             robotArmAudio.PlayOneShot(adu[9]);
-            bSource.PlayOneShot(adu[2]);
+            armIsUp = true;
         }
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
@@ -132,7 +172,6 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            //let gas flow up if we're going to use it
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             robotArmAudio.PlayOneShot(adu[9]);
         }
@@ -144,16 +183,14 @@ public class SceneManager : MonoBehaviour
             //Play the insect thing
             //play haptic vest again
         }
-
         if (Input.GetKeyDown(KeyCode.W)) 
         {
             //play weird voice and afterwards
             //initiate phase 2 or seperate that to something else.
             animationParent.GetComponent<Animator>().Play("Armature_002_ArmRise");
             robotArmAudio.PlayOneShot(adu[9]);
-            bSource.PlayOneShot(adu[3]);
+            armIsUp2 = true;
         }
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
@@ -173,7 +210,6 @@ public class SceneManager : MonoBehaviour
             animationParent.GetComponent<Animator>().Play("Hnad|Hand_Fall");
             //play animation for weird player arms
         }
-
         if (Input.GetKeyDown(KeyCode.Y)) 
         {
             //initiate phase 3
@@ -182,10 +218,6 @@ public class SceneManager : MonoBehaviour
             hapticEvents.Invoke("RoomFalling", 1f);
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);
         }
-
-
-
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             lamp.SetActive(true);
