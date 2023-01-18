@@ -41,7 +41,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
-            //hapticEvents.Invoke("WeelEvent", 8f);
+            hapticEvents.Invoke("WeelEvent", 8f);
             aSource.PlayOneShot(adu[12]);
             //animationParent.GetComponent<Animator>().Play("Armature_002_ArmDetract");
             tv.GetComponentInChildren<VideoPlayer>().Prepare();
@@ -70,12 +70,12 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha5)) 
         {
-            robotArm.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure");
+            animationParent.GetComponent<Animator>().Play("Armature_002|Heartbeat_Measure");
             hapticEvents.Invoke("HeartScan", 2f);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            robotArm.GetComponent<Animator>().Play("Armature_002|Temperature Measure");
+            animationParent.GetComponent<Animator>().Play("Armature_002|Temperature Measure");
             //we stab the person in the chair
             //robot arm moves up and disappears again.
         }
