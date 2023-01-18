@@ -140,7 +140,7 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
+            animationParent.GetComponent<Animator>().Play("Armature_002|Arm_Cutoff");
             robotArmAudio.PlayOneShot(adu[6]);
         }
         if (Input.GetKeyDown(KeyCode.R))
