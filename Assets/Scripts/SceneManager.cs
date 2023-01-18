@@ -13,7 +13,15 @@ public class SceneManager : MonoBehaviour
 
     public GameObject lamp;
 
+    public GameObject mesh1;
+    public GameObject mesh2;
+    public GameObject mesh3;
+    public GameObject hand;
+
+
+    public GameObject animationParent;
     public GameObject robotArm;
+    public GameObject knife;
 
     public AudioSource aSource;
     public AudioSource bSource;
@@ -21,6 +29,12 @@ public class SceneManager : MonoBehaviour
     public AudioClip[] adu;
 
     public HapticEvents hapticEvents;
+
+    private void Start()
+    {
+        knife.SetActive(false);
+        robotArm.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +43,7 @@ public class SceneManager : MonoBehaviour
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
             //hapticEvents.Invoke("WeelEvent", 8f);
             aSource.PlayOneShot(adu[12]);
-            robotArm.GetComponent<Animator>().Play("Armature_002_ArmDetract");
+            //animationParent.GetComponent<Animator>().Play("Armature_002_ArmDetract");
             tv.GetComponentInChildren<VideoPlayer>().Prepare();
         }
 
@@ -49,7 +63,8 @@ public class SceneManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha4)) 
         {
-            robotArm.GetComponent<Animator>().Play("Armature_002|ArmLower");
+            robotArm.SetActive(true);
+            animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             //Robot arm down thing
             //Play ear sound
         }
