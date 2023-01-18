@@ -51,6 +51,7 @@ public class SceneManager : MonoBehaviour
             {
                 mesh1.SetActive(false);
                 mesh2.SetActive(true);
+                isCutting = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
