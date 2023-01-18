@@ -57,7 +57,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             tv.GetComponent<Animator>().Play("Pop Up");
-            aSource.PlayOneShot(adu[1]);
+            bSource.PlayOneShot(adu[1]);
         }
 
 
