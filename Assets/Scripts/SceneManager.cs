@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.VFX;
 
 public class SceneManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class SceneManager : MonoBehaviour
     public GameObject mesh3;
     public GameObject hand;
 
+    public GameObject vfxGas;
 
     public GameObject animationParent;
     public GameObject robotArm;
@@ -34,7 +36,9 @@ public class SceneManager : MonoBehaviour
     public HapticEvents hapticEvents;
 
     bool isCutting = false;
+    bool gasIsGassing = false;
     float timer = 3.91f;
+    float vfxTimer = 3f;
 
     private void Start()
     {
@@ -54,10 +58,20 @@ public class SceneManager : MonoBehaviour
                 isCutting = false;
             }
         }
+        if (gasIsGassing) 
+        {
+            vfxTimer--;
+            if (vfxTimer < 0) 
+            {
+                vfxGas.GetComponent<VisualEffect>().Stop();
+            }
+        
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1)) 
         {
             weelChair.GetComponent<Animator>().SetBool("IsActivated", true);
             hapticEvents.Invoke("WeelEvent", 8f);
+            vfxGas.GetComponent<VisualEffect>().Stop();
             aSource.PlayOneShot(adu[12]);
             tv.GetComponentInChildren<VideoPlayer>().Prepare();
         }
@@ -80,6 +94,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4)) 
         {
             robotArm.SetActive(true);
+            robotArm.transform.position = new Vector3(robotArm.transform.position.x - 10f, robotArm.transform.position.y, robotArm.transform.position.z);
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             robotArmAudio.PlayOneShot(adu[9]);
             //Robot arm down thing
@@ -112,11 +127,16 @@ public class SceneManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
+            vfxGas.GetComponent<VisualEffect>().Play();
+            gasIsGassing = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
             //let gas flow up if we're going to use it
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             robotArmAudio.PlayOneShot(adu[9]);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm Cutting");
             robotArmAudio.PlayOneShot(adu[6]);
@@ -125,25 +145,27 @@ public class SceneManager : MonoBehaviour
             //play haptic vest again
         }
 
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        if (Input.GetKeyDown(KeyCode.W)) 
         {
             //play weird voice and afterwards
             //initiate phase 2 or seperate that to something else.
+            animationParent.GetComponent<Animator>().Play("Armature_002_ArmRise");
+            robotArmAudio.PlayOneShot(adu[9]);
             bSource.PlayOneShot(adu[3]);
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|ArmLower");
             knife.SetActive(true);
             robotArmAudio.PlayOneShot(adu[9]);
         }
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (Input.GetKeyDown(KeyCode.R)) 
         {
             animationParent.GetComponent<Animator>().Play("Armature_002|Arm_Cutoff");
             robotArmAudio.PlayOneShot(adu[6]);
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             hand.SetActive(true);
             mesh2.SetActive(false);
@@ -152,7 +174,7 @@ public class SceneManager : MonoBehaviour
             //play animation for weird player arms
         }
 
-        if (Input.GetKeyDown(KeyCode.T)) 
+        if (Input.GetKeyDown(KeyCode.Y)) 
         {
             //initiate phase 3
             bSource.PlayOneShot(adu[4]);
@@ -160,6 +182,9 @@ public class SceneManager : MonoBehaviour
             hapticEvents.Invoke("RoomFalling", 1f);
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);
         }
+
+
+
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
