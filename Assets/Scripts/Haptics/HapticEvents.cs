@@ -19,4 +19,9 @@ public class HapticEvents : MonoBehaviour
     {
         Bhaptics.SDK2.BhapticsLibrary.Play("heartscan");
     }
+
+    public void rug()
+    {
+        Bhaptics.SDK2.BhapticsLibrary.Play("rugvideo");
+    }
 }

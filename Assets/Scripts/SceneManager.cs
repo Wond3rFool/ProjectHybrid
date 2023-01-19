@@ -14,6 +14,8 @@ public class SceneManager : MonoBehaviour
     public GameObject fallingFloor;
     public GameObject visibleFloor;
     public GameObject eyeBall;
+    public GameObject barry1;
+    public GameObject barry2;
 
     public GameObject lamp;
 
@@ -157,6 +159,7 @@ public class SceneManager : MonoBehaviour
             lampAudio.Play();
             tv.GetComponent<Animator>().Play("Drop down");
             tv.GetComponentInChildren<VideoPlayer>().Play();
+            hapticEvents.Invoke("rug", 130f);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -203,6 +206,7 @@ public class SceneManager : MonoBehaviour
         {
             vfxGas.GetComponent<VisualEffect>().Play();
             gasIsGassing = true;
+            barry1.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
@@ -253,16 +257,19 @@ public class SceneManager : MonoBehaviour
             mesh3.SetActive(true);
             animationParent.GetComponent<Animator>().Play("Hnad|Hand_Fall");
             //play animation for weird player arms
+            barry1.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.U)) 
         {
             flickerLights = true; 
             eyeBall.SetActive(true);
+            barry2.SetActive(true);
             // Flashing room
         }
 
         if (Input.GetKeyDown(KeyCode.I)) 
         {
+            barry2.SetActive(false);
             visibleFloor.SetActive(false);
             hapticEvents.Invoke("RoomFalling", 1f);
             fallingFloor.GetComponent<Animator>().SetBool("IsActivated", true);

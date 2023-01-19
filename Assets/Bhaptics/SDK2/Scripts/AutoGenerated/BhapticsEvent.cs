@@ -17,20 +17,24 @@ namespace Bhaptics.SDK2
     public class BhapticsEvent
     {
         
-        public const string FORCRAWL = "forcrawl";
-        
-        public const string BACKCRAWL = "backcrawl";
-        
-        public const string FLOOR_RUMBLE = "floor_rumble";
-        
-        public const string MAXVIBRATE = "maxvibrate";
-        
-        public const string HYBRID = "hybrid";
-        
         public const string WEELONE = "weelone";
         
         public const string HEARTSCAN = "heartscan";
         
+        public const string FORCRAWL = "forcrawl";
+        
+        public const string RUGVIDEO = "rugvideo";
+        
         public const string UPDV1 = "updv1";
+        
+        public const string MAXVIBRATE = "maxvibrate";
+        
+        public const string BACKCRAWL = "backcrawl";
+        
+        public const string CENTIPEDE_BACK = "centipede_back";
+        
+        public const string HYBRID = "hybrid";
+        
+        public const string FLOOR_RUMBLE = "floor_rumble";
     }
 }
