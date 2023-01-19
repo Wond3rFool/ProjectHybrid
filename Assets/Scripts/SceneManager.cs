@@ -9,6 +9,7 @@ public class SceneManager : MonoBehaviour
 {
     public GameObject weelChair;
     public GameObject tv;
+    public GameObject fadeOut;
 
     public GameObject fallingFloor;
     public GameObject visibleFloor;
@@ -161,6 +162,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             tv.GetComponent<Animator>().Play("Pop Up");
+            fadeOut.GetComponent<Animator>().Play("FadeOut");
             videoDone = true;
         }
 
