@@ -1311,18 +1311,22 @@ MonoBehaviour:
   lampAudio: {fileID: 2062864586}
   adu:
   - {fileID: 8300000, guid: 6728a8de77d14284280eb2349e5e6421, type: 3}
-  - {fileID: 8300000, guid: add40877e70ed7041ae9a28e0bac6fb4, type: 3}
-  - {fileID: 8300000, guid: eee2b9f2fefcd0c4da3f1129c146bbe4, type: 3}
-  - {fileID: 8300000, guid: 7e1770ce95c156e408ab358bc1ca766e, type: 3}
-  - {fileID: 8300000, guid: 25952cb5f7f2ce34889d23b4c4078478, type: 3}
-  - {fileID: 8300000, guid: 1c473f3a725c8c04d9694f3883417012, type: 3}
+  - {fileID: 8300000, guid: daf1c8ca89615694aa0b46b240b1d085, type: 3}
+  - {fileID: 8300000, guid: 7d7518b81ae99144492124d64a73447b, type: 3}
+  - {fileID: 8300000, guid: 628e8080b83a18342a1c6fcf5a708a32, type: 3}
+  - {fileID: 8300000, guid: bc6c0c7e7bb2a3e4c9d83b96e34e232d, type: 3}
+  - {fileID: 8300000, guid: f101c0866fe774e40a2b717fc59008e5, type: 3}
   - {fileID: 8300000, guid: b134f692f81e0f24a9c87205b8108582, type: 3}
   - {fileID: 8300000, guid: 5fe7d3f0b7709b947a006955ceae51bc, type: 3}
   - {fileID: 8300000, guid: ba61310b368a04a40afa60c74b6c12fc, type: 3}
   - {fileID: 8300000, guid: 7466cf543d79d8e4585e96396aab4183, type: 3}
   - {fileID: 8300000, guid: 7bcfa270d6772f542aa324f670928c07, type: 3}
   - {fileID: 8300000, guid: 4eb084eb86cc31f4da45286d66a86db9, type: 3}
-  - {fileID: 8300000, guid: 48f5abbfb0341b548960497c6af24428, type: 3}
+  - {fileID: 8300000, guid: e74c31805fa90f149a2c9bccdd9e23a3, type: 3}
+  - {fileID: 8300000, guid: d2bc613c6a21a804795e0f809f0ce4d6, type: 3}
+  - {fileID: 8300000, guid: f2eae17c93385554ebb231c286a01dc7, type: 3}
+  - {fileID: 8300000, guid: fff81a45a40d0fc4fb27a918850c8adb, type: 3}
+  - {fileID: 8300000, guid: fb2e492baedce6d428f975920889299a, type: 3}
   hapticEvents: {fileID: 872463529}
 --- !u!1001 &202251267
 PrefabInstance:

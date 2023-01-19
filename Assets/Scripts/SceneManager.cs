@@ -135,6 +135,7 @@ public class SceneManager : MonoBehaviour
         if (flickerLights)
         {
             LightsFlickering();
+            aSource.PlayOneShot(adu[16]);
             flickerlightsTime -= Time.deltaTime;
             if (flickerlightsTime <= 0) 
             {
@@ -217,6 +218,7 @@ public class SceneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             centipede.GetComponent<Animator>().Play("CentipedeBody_CentipedeBodyCrawl");
+            aSource.PlayOneShot(adu[15]);
             //play haptics bodycrawl.
         }
 
